@@ -6,11 +6,11 @@
   },
   "name": "blog",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.mjs",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev" : "nodemon app.js",
+    "start": "node app.mjs",
+    "dev" : "nodemon app.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
