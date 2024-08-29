@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs")  %>
+<body>
+    <div class="main">
+        <%-include ("partials/logobar.ejs")  %>
+
+        <div class="middle" id="post-space">
+            <div class="new-post-input">
+                <form action="/edit-result" method="POST">
+                
+                <input class="large-input" type="text" id="user-input" name="userInput" value="<%= current_text  %>" required>
+                
+                <button class="submit" type="submit">Edit Post</button>
+              </form>
+            </div>
+            
+        </div>
+
+        <%-include ("partials/leftside.ejs")  %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<%- include("partials/header.ejs") %>
+
+    <body>
+
+        <div class="main">
+            <%-include ("partials/logobar.ejs") %>
+                <!---->
+                <!---->
+                <!---->
+                <div class="middle">
+                    <% if(locals.list){ %>
+                        <% for (var i=0 ; i<list.length ; i++){ %>
+                            <div class="post">
+                                <img class="user-image" src="images/user<%= list[i].user_picture %>.jpg" alt="user"
+                                    height="100px" width="100px" style="border-radius : 50% ;">
+                                <div class="post-contant">
+                                    <p>
+                                        <%= list[i].textp %>
+                                    </p>
+                                </div>
+
+                                <div class="dropdown">
+                                    <button class="dropdown-button"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-three-dots"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                        </svg></button>
+                                    <div class="dropdown-content">
+                                        <form action="/edit" method="POST">
+                                            <input type="hidden" name="postId" value="<%= list[i].id %>">
+                                            <button type="submit" class="dropdown-item">Edit</button>
+                                        </form>
+                                        <form action="/remove" method="POST">
+                                            <input type="hidden" name="postId" value="<%= list[i].id %>">
+                                            <button type="submit" class="dropdown-item">Remove</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <%}%>
+                                <%}%>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <%-include ("partials/leftside.ejs") %>
+        </div>
+
+    </body>
+
+    </html>
